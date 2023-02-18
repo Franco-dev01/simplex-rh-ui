@@ -23,6 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "commit": "cz",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -54,5 +55,15 @@
     "@typescript-eslint/parser": "^5.52.0",
     "eslint": "^8.34.0",
     "eslint-plugin-react": "^7.32.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
   }
 }
