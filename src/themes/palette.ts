@@ -5,16 +5,15 @@ type PaletteMode = 'default'
 const palette: Record<PaletteMode, PaletteOptions> = {
   default: {
     primary: {
-      light: '#339F8F',
-      main: '#008773',
-      dark: '#005E50',
-      contrastText: '#fff',
+      light: '#eceff1',
+      main: '#cfd8dc',
+      dark: '#b0bec5',
+      contrastText: '#90a4ae',
     },
     secondary: {
-      light: '#F4FEF7',
-      main: '#F2FEF6',
-      dark: '#A9B1AC',
-      contrastText: '#545454',
+      light: '#AAF27F',
+      main: '#54D62C',
+      dark: '#229A16',
     },
   },
 }
