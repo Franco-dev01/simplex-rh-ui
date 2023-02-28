@@ -18,15 +18,15 @@ const App = () => {
   const { pathname } = useLocation()
 
   return (
-    <AuthGuard>
-      <DashboardLayout>
-        <ErrorBoundary key={pathname} FallbackComponent={ErrorFallback}>
-          <Suspense fallback={<LoadingScreen isDashboard={pathname.includes('/')} />}>
-            <Outlet />
-          </Suspense>
-        </ErrorBoundary>
-      </DashboardLayout>
-    </AuthGuard>
+    //<AuthGuard>
+    <DashboardLayout>
+      <ErrorBoundary key={pathname} FallbackComponent={ErrorFallback}>
+        <Suspense fallback={<LoadingScreen isDashboard={pathname.includes('/')} />}>
+          <Outlet />
+        </Suspense>
+      </ErrorBoundary>
+    </DashboardLayout>
+    //</AuthGuard>
   )
 }
 

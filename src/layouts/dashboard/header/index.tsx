@@ -1,20 +1,14 @@
-import LogoutIcon from '@mui/icons-material/Logout'
+import { Logout } from '@mui/icons-material'
 import { AppBar, Stack, Toolbar, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 
 import IconButton from '../../../components/IconButton'
 import Iconify from '../../../components/Iconify'
-import MenuButton from '../../../components/ProfileMenu'
 import { HEADER, NAVBAR } from '../../../config/layouts'
-import useAuth from '../../../hooks/useAuth'
 import useOffSetTop from '../../../hooks/useOffSetTop'
 import useResponsive from '../../../hooks/useResponsive'
-import { PATH_AUTH } from '../../../routes/paths'
 import { cssStyles } from '../../../utils/cssStyles'
-import { pxToRem } from '../../../utils/getFontValues'
-import getFullName from '../../../utils/getFullName'
 
 // ----------------------------------------------------------------------
 
@@ -74,18 +68,6 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
 }) => {
   const isOffset = useOffSetTop(HEADER.DASHBOARD_DESKTOP_HEIGHT) && !verticalLayout
   const isDesktop = useResponsive('up', 'lg')
-  const navigate = useNavigate()
-  const { logout, user } = useAuth()
-
-  const handleLogout = async () => {
-    try {
-      await logout()
-
-      navigate(PATH_AUTH.login.root, { replace: true })
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
   return (
     <RootStyle
@@ -129,21 +111,9 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             </Typography>
           </IconButton>
 
-          <MenuButton
-            name={getFullName(user?.firstName, user?.lastName)}
-            imgSrc={user?.picture}
-            items={[
-              {
-                icon: <LogoutIcon />,
-                label: 'Déconnexion',
-                onClick: handleLogout,
-              },
-            ]}
-            sx={{
-              boxShadow: '',
-              borderRadius: pxToRem(10),
-            }}
-          />
+          <IconButton size='large' sx={{ boxShadow: '' }}>
+            <Logout />
+          </IconButton>
         </Stack>
       </Toolbar>
     </RootStyle>
