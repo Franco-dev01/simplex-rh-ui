@@ -2,7 +2,6 @@ import { Box, Drawer, Stack } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
 import React from 'react'
 
-import Logo from '../../../components/Logo'
 import { NavSectionVertical } from '../../../components/nav-section'
 import Scrollbar from '../../../components/Scrollbar'
 import { NAVBAR } from '../../../config/layouts'
@@ -45,9 +44,10 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
         sx={{
           height: 1,
           '& .simplebar-content': {
-            height: 1,
+            height: '100vh',
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'space-around',
           },
         }}
       >
@@ -59,7 +59,7 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
             fontSize: 20,
           }}
         >
-          <Logo />
+          Simplex-rh
         </Stack>
 
         <NavSectionVertical navConfig={navConfig} />
