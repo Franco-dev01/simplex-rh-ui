@@ -6,7 +6,7 @@ const palette: Record<PaletteMode, PaletteOptions> = {
   default: {
     primary: {
       light: '#eceff1',
-      main: '#cfd8dc',
+      main: '#0877bc',
       dark: '#b0bec5',
       contrastText: '#90a4ae',
     },
