@@ -5,20 +5,33 @@ import { Navigate, Outlet, RouteObject, useLocation } from 'react-router-dom'
 import ErrorFallback from '../components/ErrorFallback'
 import LoadingScreen from '../components/LoadingScreen'
 import { PATH_AFTER_LOGIN } from '../config/environements'
-import AuthGuard from '../guard/AuthGuard'
+// import AuthGuard from '../guard/AuthGuard'
 import { lazyImport } from '../utils/lazy-import'
 
 const { DashboardLayout } = lazyImport(() => import('../layouts/dashboard'), 'DashboardLayout')
-const { DashboardRoutes } = lazyImport(
-  () => import('../features/dashboard/routes'),
-  'DashboardRoutes',
+
+const { TaskRoutes } = lazyImport(() => import('../features/task-management/routes'), 'TaskRoutes')
+
+const { LeaveRoutes } = lazyImport(
+  () => import('../features/leave-management/routes'),
+  'LeaveRoutes',
+)
+
+const { ConfigurationRoutes } = lazyImport(
+  () => import('../features/configurations/routes'),
+  'ConfigurationRoutes',
+)
+const { PersonnelAdministrationRoutes } = lazyImport(
+  () => import('../features/personnel-administration/routes'),
+  'PersonnelAdministrationRoutes',
 )
 
 const App = () => {
   const { pathname } = useLocation()
 
   return (
-    //<AuthGuard>
+    // <AuthGuard>
+
     <DashboardLayout>
       <ErrorBoundary key={pathname} FallbackComponent={ErrorFallback}>
         <Suspense fallback={<LoadingScreen isDashboard={pathname.includes('/')} />}>
@@ -26,7 +39,8 @@ const App = () => {
         </Suspense>
       </ErrorBoundary>
     </DashboardLayout>
-    //</AuthGuard>
+
+    // </AuthGuard>
   )
 }
 
@@ -39,9 +53,22 @@ const protectedRoutes: RouteObject[] = [
         element: <Navigate to={PATH_AFTER_LOGIN} replace />,
         index: true,
       },
+
       {
-        path: 'accueil/*',
-        element: <DashboardRoutes />,
+        path: 'task/*',
+        element: <TaskRoutes />,
+      },
+      {
+        path: 'leave/*',
+        element: <LeaveRoutes />,
+      },
+      {
+        path: 'configuration/*',
+        element: <ConfigurationRoutes />,
+      },
+      {
+        path: 'personal-administration/*',
+        element: <PersonnelAdministrationRoutes />,
       },
     ],
   },

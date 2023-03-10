@@ -1,5 +1,6 @@
 const ROOTS_AUTH = '/auth'
 const ROOTS_DASHBOARD = '/accueil'
+const ROOTS_TASK = '/task'
 
 export function path(root: string, resLint: string) {
   return `${root}${resLint}`
@@ -23,27 +24,11 @@ export const PATH_AUTH = {
   },
 }
 
-/* export const PATH_TAX_DIRECTORY = {
-  root: ROOT_TAX_DIRECTORY,
-  taxRegimes: {
-    list: path(ROOT_TAX_DIRECTORY, '/regimes-fiscaux'),
-    creation: path(ROOT_TAX_DIRECTORY, '/regimes-fiscaux/creation'),
-    edition: (taxRegimeId: string) =>
-      path(ROOT_TAX_DIRECTORY, `/regimes-fiscaux/${taxRegimeId}/edition`),
+export const PATH_TASK = {
+  list: {
+    root: path(ROOTS_TASK, '/list'),
   },
-  taxServices: {
-    list: path(ROOT_TAX_DIRECTORY, '/services-impots'),
-    creation: path(ROOT_TAX_DIRECTORY, '/services-impots/creation'),
-    edition: (taxServiceId: string) =>
-      path(ROOT_TAX_DIRECTORY, `/services-impots/${taxServiceId}/edition`),
-  },
-  generalTaxOffice: {
-    list: path(ROOT_TAX_DIRECTORY, '/direction-generale-impots'),
-    creation: path(ROOT_TAX_DIRECTORY, '/direction-generale-impots/creation'),
-    edition: (generalTaxOfficeId: string) =>
-      path(ROOT_TAX_DIRECTORY, `/direction-generale-impots/${generalTaxOfficeId}/edition`),
-  },
-};*/
+}
 
 export const PATH_OTHER = {
   notFound: '/404',

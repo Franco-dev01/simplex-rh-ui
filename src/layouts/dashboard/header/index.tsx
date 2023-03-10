@@ -1,5 +1,4 @@
-import { Logout } from '@mui/icons-material'
-import { AppBar, Stack, Toolbar, Typography } from '@mui/material'
+import { AppBar, Stack, Toolbar } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import React from 'react'
 
@@ -70,12 +69,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
   const isDesktop = useResponsive('up', 'lg')
 
   return (
-    <RootStyle
-      isCollapse={isCollapse}
-      isOffset={isOffset}
-      verticalLayout={verticalLayout}
-      sx={{ background: 'transparent' }}
-    >
+    <RootStyle isCollapse={isCollapse} isOffset={isOffset} verticalLayout={verticalLayout}>
       <Toolbar
         sx={{
           minHeight: '100% !important',
@@ -103,18 +97,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({
             xs: 0.5,
             sm: 1.5,
           }}
-        >
-          <IconButton size='large' sx={{ boxShadow: '' }}>
-            <Iconify icon='ci:notification' fontSize={['0.75rem', '1rem', '1.5rem']} />
-            <Typography fontFamily='Roboto, sans-serif' fontWeight='bold'>
-              3
-            </Typography>
-          </IconButton>
-
-          <IconButton size='large' sx={{ boxShadow: '' }}>
-            <Logout />
-          </IconButton>
-        </Stack>
+        ></Stack>
       </Toolbar>
     </RootStyle>
   )
