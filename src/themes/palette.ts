@@ -11,9 +11,9 @@ const palette: Record<PaletteMode, PaletteOptions> = {
       contrastText: '#90a4ae',
     },
     secondary: {
-      light: '#AAF27F',
-      main: '#54D62C',
-      dark: '#229A16',
+      light: '',
+      main: '#b6bbc2',
+      dark: '#4c5d70',
     },
   },
 }

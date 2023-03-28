@@ -26,6 +26,11 @@ const { PersonnelAdministrationRoutes } = lazyImport(
   'PersonnelAdministrationRoutes',
 )
 
+const { LeaveAbsenceManagementRoutes } = lazyImport(
+  () => import('../features/leave-absent-management/routes'),
+  'LeaveAbsenceManagementRoutes',
+)
+
 const App = () => {
   const { pathname } = useLocation()
 
@@ -69,6 +74,10 @@ const protectedRoutes: RouteObject[] = [
       {
         path: 'personal-administration/*',
         element: <PersonnelAdministrationRoutes />,
+      },
+      {
+        path: 'leave-absence-management/*',
+        element: <LeaveAbsenceManagementRoutes />,
       },
     ],
   },

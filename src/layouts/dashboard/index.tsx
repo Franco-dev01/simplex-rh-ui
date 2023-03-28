@@ -47,13 +47,13 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       sx={{
         display: { lg: 'flex' },
         minHeight: { lg: 1 },
-        background: themeMode === 'light' ? '#FBFBFB' : 'inherit',
+        background: '#f9f9f9',
       }}
     >
       <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
-      <MainStyle collapseClick={collapseClick}>{children}</MainStyle>
-
-      <NavBottom />
+      <MainStyle collapseClick={collapseClick}>
+        {children} <NavBottom />
+      </MainStyle>
     </Box>
   )
 }

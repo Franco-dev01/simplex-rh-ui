@@ -9,8 +9,8 @@ import { FKProvider } from '../../../../../components/Formik'
 const DepartmentCreation = () => {
   return (
     <Paper>
-      <Stack direction='row' alignItems='center' justifyContent='space-between' sx={{ px: 5 }}>
-        <Typography>Enregistrement</Typography>
+      <Stack direction='row' alignItems='center' justifyContent='space-between' px={2}>
+        <Typography sx={{ color: '#4c5d70' }}>ENREGISTREMENT</Typography>
       </Stack>
 
       <FKProvider value={{}} onSubmit={() => ({})}>

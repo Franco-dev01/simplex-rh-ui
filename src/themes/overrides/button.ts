@@ -1,11 +1,11 @@
-import { ButtonProps, Components, Theme } from '@mui/material';
-import { alpha } from '@mui/material/styles';
+import { ButtonProps, Components, Theme } from '@mui/material'
+import { alpha } from '@mui/material/styles'
 
-export const pxToRem = (value: number) => `${value / 16}rem`;
+export const pxToRem = (value: number) => `${value / 16}rem`
 
 type ButtonOverridesOptions = () => {
-  MuiButton: Components<Theme>['MuiButton'];
-};
+  MuiButton: Components<Theme>['MuiButton']
+}
 
 const button: ButtonOverridesOptions = () => ({
   MuiButton: {
@@ -77,6 +77,6 @@ const button: ButtonOverridesOptions = () => ({
       }),
     },
   },
-});
+})
 
-export default button();
+export default button()

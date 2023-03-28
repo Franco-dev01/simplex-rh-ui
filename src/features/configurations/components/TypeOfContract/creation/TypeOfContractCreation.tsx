@@ -9,8 +9,8 @@ import { Stack, Typography } from '@mui/material'
 const TypeOfContractCreation = () => {
   return (
     <Paper>
-      <Stack direction='row' alignItems='center' justifyContent='space-between' sx={{ px: 5 }}>
-        <Typography>Enregistrement</Typography>
+      <Stack direction='row' alignItems='center' justifyContent='space-between' sx={{ px: 2 }}>
+        <Typography sx={{ color: '#4c5d70' }}>ENREGISTREMENT</Typography>
       </Stack>
       <FKProvider value={{}} onSubmit={() => ({})}>
         <TypeOfContractForm />

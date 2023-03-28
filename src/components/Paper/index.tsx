@@ -25,14 +25,14 @@ export default function Paper({
       sx={{
         ...sx,
         '& > :not(style)': {
-          padding: '20px',
+          padding: '10px',
           height: '100%',
           flexGrow: 1,
         },
         height: '100%',
       }}
     >
-      <MuiPaper elevation={1} {...rest}>
+      <MuiPaper elevation={0.9} {...rest} sx={{ borderRadius: '10px' }}>
         {isClose && (
           <Stack direction='row-reverse'>
             <Button

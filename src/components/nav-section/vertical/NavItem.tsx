@@ -130,29 +130,12 @@ export const NavItemSub: React.FC<NavItemSubProps> = ({
 }) => {
   const { title, path, info, children } = item
 
-  const renderContent = item?.available ? (
+  const renderContent = (
     <>
       <ListItemText disableTypography primary={title} />
       {info && info}
       {children && <ArrowIcon open={open} />}
       {active && <LineIcon active={active} />}
-    </>
-  ) : (
-    <>
-      <ListItemText disableTypography primary={title} />
-      {info && info}
-      {children && <ArrowIcon open={open} />}
-      <Typography
-        component='small'
-        sx={{
-          fontSize: 11,
-          backgroundColor: '#F6FAFE',
-          borderRadius: 5,
-          p: 0.3,
-        }}
-      >
-        Indispo
-      </Typography>
     </>
   )
 

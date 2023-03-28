@@ -6,7 +6,12 @@ import {
   Dashboard,
 } from '@mui/icons-material'
 import React from 'react'
-import { PATH_TASK } from '../../../routes/paths'
+import {
+  PATH_CONFIGURATION,
+  PATH_LEAVE_ABSENCE_MANAGEMENT,
+  PATH_PERSONNEL_ADMINISTRATION,
+  PATH_TASK_MANAGEMENT,
+} from '../../../routes/paths'
 
 const navConfig = [
   {
@@ -14,68 +19,80 @@ const navConfig = [
       {
         title: 'Administration du personnel',
         icon: <AdminPanelSettings />,
-        path: '#',
+        path: PATH_PERSONNEL_ADMINISTRATION.employee.root,
         children: [
           {
-            title: 'Ajouter un employer',
-            path: 'personal-administration/employee/add',
+            title: 'Ajouter un employé',
+            path: PATH_PERSONNEL_ADMINISTRATION.employee.root,
           },
           {
-            title: 'Consulter fiche employer',
-            path: 'personal-administration/consultation-employee/list',
+            title: 'Consulter fiche employé',
+            path: PATH_PERSONNEL_ADMINISTRATION.consultationEmployee.root,
           },
           {
-            title: 'Faire une communiquer',
-            path: 'personal-administration/communication/list',
+            title: 'Faire un communiqué',
+            path: PATH_PERSONNEL_ADMINISTRATION.communication.root,
           },
           {
-            title: 'Faire employer',
-            path: 'personal-administration/communication-history/list',
+            title: 'Historique des communiqués',
+            path: PATH_PERSONNEL_ADMINISTRATION.communicationHistory.root,
           },
         ],
       },
       {
-        title: 'Gestion des conges et absence',
+        title: 'Gestion des congés et absences',
         icon: <AdminPanelSettings />,
-        path: '#',
+        path: PATH_LEAVE_ABSENCE_MANAGEMENT.leaveRequest,
         children: [
           {
-            title: 'Employes',
-            path: '#',
+            title: 'Demande de congé',
+            path: PATH_LEAVE_ABSENCE_MANAGEMENT.leaveRequest,
+          },
+          {
+            title: 'Bilan des demandes',
+            path: PATH_LEAVE_ABSENCE_MANAGEMENT.balanceRequest,
+          },
+          {
+            title: 'Gestion des demandes',
+            path: PATH_LEAVE_ABSENCE_MANAGEMENT.demandManagement,
           },
         ],
       },
       {
-        title: 'Gestion des taches',
+        title: 'Gestion des tâches',
         icon: <AdminPanelSettings />,
         path: '#',
         children: [
           {
-            title: 'Employes',
-            path: '#',
+            title: 'Ajoute de tâche',
+            path: PATH_TASK_MANAGEMENT.task.creation,
+          },
+          {
+            title: 'Liste des projets',
+            path: PATH_TASK_MANAGEMENT.project.root,
           },
         ],
       },
       {
         title: 'Configuration',
         icon: <Settings />,
-        path: 'configuration/',
+        path: PATH_CONFIGURATION.department.root,
         children: [
           {
             title: 'Type de contrat',
-            path: 'configuration/type-contract/list',
+            path: PATH_CONFIGURATION.typeContract.root,
           },
           {
-            title: 'Type de conger',
-            path: 'configuration/type-leave/list',
+            title: 'Type de congé',
+            path: PATH_CONFIGURATION.typeLeave.root,
           },
           {
-            title: 'Fonction dans l entreprise',
-            path: 'configuration/function-company/list',
+            title: 'Fonction dans l   entreprise',
+            path: PATH_CONFIGURATION.functionCompany.root,
           },
           {
             title: 'Departement',
-            path: 'configuration/department/list',
+            path: PATH_CONFIGURATION.department.root,
           },
         ],
       },

@@ -1,14 +1,15 @@
 import { Box, Button, Stack } from '@mui/material'
 import { FKTextField } from '../../../../../components/Formik'
+import SelectDestination from './SelectDestination'
 const CommunicationForm = () => {
   return (
-    <>
+    <Stack sx={{ position: 'sticky', overflow: 'scroll', height: '300px' }}>
       <Box
         sx={{
           display: 'grid',
           justifyItems: 'center',
-          gap: 5,
-          p: 5,
+          gap: 2,
+          p: 2,
           gridTemplateColumns: {
             xs: 'repeat(1, 1fr)',
             sm: 'repeat(1, 1fr)',
@@ -16,33 +17,27 @@ const CommunicationForm = () => {
           },
         }}
       >
-        <FKTextField name='title' label='Titre' placeholder='Saisir le titre' fullWidth required />
+        <FKTextField name='title' label='' placeholder='Saisir le titre' fullWidth required />
 
         <FKTextField
           name='description'
-          label='Contenu principal'
+          label=''
           placeholder='Saisir le contenue'
           fullWidth
           required
+          multiline
+          rows={3}
         />
 
-        <FKTextField
-          name='destination'
-          label='Destination'
-          placeholder='Saisir la destination'
-          fullWidth
-          required
-        />
+        <SelectDestination name='destination' label='' />
       </Box>
 
-      <Stack direction='row' justifyContent='center' paddingX={3} spacing={2} mb={5}>
-        <Button color='primary'>Annuler</Button>
-
-        <Button type='submit' color='primary' variant='contained'>
-          Créer
+      <Stack direction='row' justifyContent='start' spacing={2} mb={5} px={2}>
+        <Button color='primary' sx={{ width: '50%' }}>
+          ENREGISTRER
         </Button>
       </Stack>
-    </>
+    </Stack>
   )
 }
 

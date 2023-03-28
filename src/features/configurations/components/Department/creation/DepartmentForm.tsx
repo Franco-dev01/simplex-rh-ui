@@ -1,5 +1,6 @@
 import { Box, Button, Stack } from '@mui/material'
 import { FKTextField } from '../../../../../components/Formik'
+import SelectVisitType from './SelectVisitType'
 const DepartmentForm = () => {
   return (
     <>
@@ -7,8 +8,8 @@ const DepartmentForm = () => {
         sx={{
           display: 'grid',
           justifyItems: 'center',
-          gap: 5,
-          p: 5,
+          gap: 2,
+          p: 2,
           gridTemplateColumns: {
             xs: 'repeat(1, 1fr)',
             sm: 'repeat(1, 1fr)',
@@ -18,7 +19,7 @@ const DepartmentForm = () => {
       >
         <FKTextField
           name='denomination'
-          label='Denomination'
+          label=''
           placeholder='Saisir la denomination'
           fullWidth
           required
@@ -26,18 +27,17 @@ const DepartmentForm = () => {
 
         <FKTextField
           name='description'
-          label='Description'
+          label=''
           placeholder='Saisir la description'
           fullWidth
           required
         />
+        <SelectVisitType name='visit' label='' />
       </Box>
 
-      <Stack direction='row' justifyContent='center' paddingX={3} spacing={2} mb={5}>
-        <Button color='primary'>Annuler</Button>
-
-        <Button type='submit' color='primary' variant='contained'>
-          Créer
+      <Stack direction='row' justifyContent='start' spacing={2} mb={5} px={2}>
+        <Button color='primary' sx={{ width: '50%' }}>
+          ENREGISTRER
         </Button>
       </Stack>
     </>

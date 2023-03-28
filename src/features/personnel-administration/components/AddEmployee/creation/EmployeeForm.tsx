@@ -7,51 +7,57 @@ const EmployeeForm = () => {
         sx={{
           display: 'grid',
           justifyItems: 'center',
-          gap: 5,
+          gap: 1.5,
           p: 5,
           gridTemplateColumns: {
             xs: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(2, 1fr)',
+            sm: 'repeat(3, 1fr)',
+            md: 'repeat(3, 1fr)',
           },
         }}
       >
-        <FKTextField name='firstname' label='Nom' placeholder='Saisir lae nom' fullWidth required />
+        <FKTextField name='firstname' label='' placeholder='Saisir le nom' fullWidth required />
 
         <FKTextField
           name='lastname'
-          label='Prenom'
+          label=''
           placeholder='Saisir le prenom'
           fullWidth
           required
+          sx={{
+            background: '#0877bc24  !important',
+          }}
         />
 
         <FKTextField
           type='date'
           name='dateBirth'
-          label='Date de naissance'
+          label=''
           placeholder='Saisir la date de naissance'
           fullWidth
           required
         />
         <FKTextField
           name='placeBirth'
-          label='Lieu de naissance'
+          label=''
           placeholder='Saisir le lieu de naissance'
           fullWidth
           required
         />
         <FKTextField
           name='pieceIdentification'
-          label='Piece d identite'
+          label=''
           placeholder='Saisir la piece d identite'
           fullWidth
           required
+          sx={{
+            background: '#0877bc24  !important',
+          }}
         />
 
         <FKTextField
           name='email'
-          label='Email personnel'
+          label=''
           placeholder='Saisir l email personnel'
           fullWidth
           required
@@ -59,7 +65,7 @@ const EmployeeForm = () => {
         <FKTextField
           type='file'
           name='cv'
-          label='CV'
+          label=''
           placeholder='Charger l email'
           fullWidth
           required
@@ -67,18 +73,21 @@ const EmployeeForm = () => {
 
         <FKTextField
           name='competenceList'
-          label='Liste des competences'
+          label=''
           placeholder='Saisir les competences'
           fullWidth
           required
           multiline
-          rows={2}
+          rows={1.5}
+          sx={{
+            background: '#0877bc24  !important',
+          }}
         />
 
         <FKTextField
           type='file'
           name='motivationLetter'
-          label='Lettre de motivation'
+          label=''
           placeholder='charger la lettre de motivation'
           fullWidth
           required
@@ -86,7 +95,7 @@ const EmployeeForm = () => {
 
         <FKTextField
           name='post'
-          label='Poste occuper'
+          label=''
           placeholder='Saisir le poste occuper'
           fullWidth
           required
@@ -95,39 +104,39 @@ const EmployeeForm = () => {
         <FKTextField
           type='file'
           name='contract'
-          label='Contrat de travail'
+          label=''
           placeholder='Charger le contrat le travail'
           fullWidth
           required
+          sx={{
+            background: '#0877bc24  !important',
+          }}
         />
 
         <FKTextField
           name='contractDuration'
-          label='Duree du contrat de travail'
+          label=''
           placeholder='Saisir le contrat le travail'
           fullWidth
           required
         />
 
-        <FKTextField
-          name='leave'
-          label='Conger'
-          placeholder='Saisir le conger'
-          fullWidth
-          required
-        />
+        <FKTextField name='leave' label='' placeholder='Saisir le conger' fullWidth required />
 
         <FKTextField
           name='affectationDepartment'
-          label='Departement d affectation'
+          label=''
           placeholder='Saisir le departement d affectation'
           fullWidth
           required
+          sx={{
+            background: '#0877bc24  !important',
+          }}
         />
 
         <FKTextField
           name='postFile'
-          label='Fiche de post'
+          label=''
           placeholder='Charger la fiche de poste'
           fullWidth
           required
@@ -135,20 +144,18 @@ const EmployeeForm = () => {
 
         <FKTextField
           name='employeeType'
-          label='Type d employer'
+          label=''
           placeholder='Selectioner le type d employer'
           fullWidth
           required
         />
+
+        <Stack direction='row' justifyContent='flex-start' sx={{ width: '100%', height: 50 }}>
+          <Button type='submit' color='primary' variant='outlined' fullWidth>
+            ENREGISTRER
+          </Button>
+        </Stack>
       </Box>
-
-      <Stack direction='row' justifyContent='center' paddingX={3} spacing={2} mb={5}>
-        <Button color='primary'>Annuler</Button>
-
-        <Button type='submit' color='primary' variant='contained'>
-          Ajouter
-        </Button>
-      </Stack>
     </>
   )
 }

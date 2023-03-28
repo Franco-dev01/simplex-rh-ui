@@ -1,5 +1,5 @@
 import React from 'react'
-import TaskCreation from '../components/task-creation/TaskCreation'
+import { TaskCreation } from '../components/task'
 
 export default function TaskCreationPage() {
   return (

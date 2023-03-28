@@ -1,5 +1,6 @@
 import { Archive, Edit } from '@mui/icons-material'
-import { GridActionsCellItem } from '@mui/x-data-grid'
+import IconButton from '@mui/material/IconButton/IconButton'
+import { GridActionsCellItem, GridRenderCellParams } from '@mui/x-data-grid'
 import React from 'react'
 import DataGrid from '../../../../../components/DataGrid'
 import Paper from '../../../../../components/Paper'
@@ -36,6 +37,16 @@ const COLUMNS = [
         icon={<Archive fontSize='small' />}
       />,
     ],
+    renderCell: (params: GridRenderCellParams) => (
+      <>
+        <IconButton size='small'>
+          <Edit fontSize='small' />
+        </IconButton>
+        <IconButton size='small'>
+          <Archive fontSize='small' />
+        </IconButton>
+      </>
+    ),
   },
 ]
 export default function TypeContract() {

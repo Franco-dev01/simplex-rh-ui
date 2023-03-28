@@ -10,18 +10,11 @@ const Dialog = ({
   onClose,
   children,
   actions,
-  'data-testid': dataTestid,
 }: DialogProps) => (
-  <StyledDialog
-    data-testid={dataTestid}
-    PaperProps={paperProps}
-    container={container}
-    open={open}
-    onClose={onClose}
-  >
-    <DialogTitle data-testid='dialog-title'>{title}</DialogTitle>
-    <DialogContent data-testid='dialog-content'>{children}</DialogContent>
-    <DialogActions data-testid='dialog-actions'>{actions}</DialogActions>
+  <StyledDialog PaperProps={paperProps} container={container} open={open} onClose={onClose}>
+    <DialogTitle>{title}</DialogTitle>
+    <DialogContent>{children}</DialogContent>
+    <DialogActions>{actions}</DialogActions>
   </StyledDialog>
 )
 

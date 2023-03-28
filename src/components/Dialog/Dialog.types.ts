@@ -9,5 +9,4 @@ export type DialogProps = {
   paperProps?: PaperProps
   title: ReactNode
   actions: ReactNode
-  'data-testid': string
 }

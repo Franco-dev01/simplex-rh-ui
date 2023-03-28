@@ -1,15 +1,15 @@
-import { DataGridProps, GridLocaleText } from '@mui/x-data-grid';
-import { forwardRef } from 'react';
+import { DataGridProps, GridLocaleText } from '@mui/x-data-grid'
+import { forwardRef } from 'react'
 
-import CustomNoRowsOverlay from './CustomEmptyOverlay';
-import StyledDataGrid from './StyledDataGrid';
+import CustomNoRowsOverlay from './CustomEmptyOverlay'
+import StyledDataGrid from './StyledDataGrid'
 
 const getFooterRowSelected = (count: number) => {
   if (count === 1) {
-    return `${count} ligne sélectionnée`;
+    return `${count} ligne sélectionnée`
   }
-  return `${count} lignes sélectionnées`;
-};
+  return `${count} lignes sélectionnées`
+}
 
 const localText: Partial<GridLocaleText> | undefined = {
   footerRowSelected: getFooterRowSelected,
@@ -19,14 +19,14 @@ const localText: Partial<GridLocaleText> | undefined = {
     labelDisplayedRows: (paginationInfos) =>
       `${paginationInfos.from}-${paginationInfos.to} sur ${paginationInfos.count}`,
   },
-};
+}
 
-const DATAGRID_HEADER_HEIGHT = 54;
-const PAGE_SIZE = 100;
+const DATAGRID_HEADER_HEIGHT = 40
+const PAGE_SIZE = 10
 
 const DataGrid = (props: DataGridProps, ref: any) => (
   <StyledDataGrid
-    checkboxSelection
+    // checkboxSelection
     localeText={localText}
     columnBuffer={3}
     columnThreshold={3}
@@ -41,12 +41,12 @@ const DataGrid = (props: DataGridProps, ref: any) => (
     headerHeight={DATAGRID_HEADER_HEIGHT}
     disableExtendRowFullWidth={false}
     autoHeight
-    density="standard"
+    density='standard'
     pageSize={PAGE_SIZE}
     {...props}
     ref={ref}
   />
-);
+)
 
-DataGrid.displayName = 'DataGrid';
-export default forwardRef(DataGrid);
+DataGrid.displayName = 'DataGrid'
+export default forwardRef(DataGrid)

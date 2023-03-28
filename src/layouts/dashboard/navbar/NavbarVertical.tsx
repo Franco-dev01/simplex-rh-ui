@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/no-unescaped-entities */
 import { Avatar, Box, Button, Divider, Drawer, IconButton, Stack, Typography } from '@mui/material'
 import { styled, useTheme } from '@mui/material/styles'
@@ -9,7 +10,7 @@ import useCollapseDrawer from '../../../hooks/useCollapseDrawer'
 import useResponsive from '../../../hooks/useResponsive'
 import profileImg from '../../../assets/images/profile.jpg'
 
-import { Email, Place, QuestionMark } from '@mui/icons-material'
+import { Badge, Email, Place, QuestionMark, Settings } from '@mui/icons-material'
 
 const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
@@ -67,14 +68,18 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
               height: 100,
               borderRadius: '50%',
               objectFit: 'cover',
-              boxShadow: '0px 0px 8px #0877bc',
+              // boxShadow: '0px 0px 8px #0877bc',
+              border: '2px solid #0877bc',
             }}
           />
-          <Typography color='primary'>ADMIN SIMPLEX</Typography>
-          <Typography color='primary' fontSize={10}>
-            Administrateur simplex
+
+          <Typography sx={{ fontSize: '16px', color: '#4c5d70', fontWeight: 'bold' }}>
+            KOUAKOU FRANCIS
           </Typography>
-          <Button>Deconnexion</Button>
+          <Typography sx={{ fontSize: '12px' }} color='secondary'>
+            Responsable RH
+          </Typography>
+          <Button sx={{ height: 35 }}>Deconnexion</Button>
         </Stack>
         <Box sx={{ flexGrow: 0.4 }} />
 
@@ -107,12 +112,10 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
             <Place />
           </IconButton>
           <Box display='table-column'>
-            <Typography fontSize='small' color='primary'>
+            <Typography sx={{ fontSize: '16px' }} color='secondary'>
               LOCALISATION
             </Typography>
-            <Typography fontSize='small' color='primary'>
-              Abidjan, Adjame
-            </Typography>
+            <Typography sx={{ fontSize: '12px' }}>Abidjan, Adjame</Typography>
           </Box>
         </Stack>
 
@@ -127,12 +130,10 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
             <QuestionMark />
           </IconButton>
           <Box display='table-column'>
-            <Typography fontSize='small' color='primary'>
+            <Typography sx={{ fontSize: '16px' }} color='secondary'>
               MANUEL D'UTILISATION
             </Typography>
-            <Typography fontSize='small' color='primary'>
-              clickez ici pour plus de details
-            </Typography>
+            <Typography sx={{ fontSize: '12px' }}>clickez ici pour plus de details</Typography>
           </Box>
         </Stack>
       </Scrollbar>
@@ -168,7 +169,7 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
             sx: {
               width: NAVBAR.DASHBOARD_WIDTH,
               borderRightStyle: 'unset',
-              boxShadow: '0 0 15px rgba(17, 17, 26, 0.1)',
+              boxShadow: '10px 0px 23px -1px #cecccc80',
               bgcolor: 'background.default',
               transition: () =>
                 theme.transitions.create('width', {
