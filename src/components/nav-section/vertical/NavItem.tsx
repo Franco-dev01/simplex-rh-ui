@@ -130,13 +130,14 @@ export const NavItemSub: React.FC<NavItemSubProps> = ({
 }) => {
   const { title, path, info, children } = item;
 
-  const renderContent = item?.available ? (
+  const renderContent = (
     <>
       <ListItemText disableTypography primary={title} />
       {info && info}
       {children && <ArrowIcon open={open} />}
       {active && <LineIcon active={active} />}
     </>
+<<<<<<< Updated upstream
   ) : (
     <>
       <ListItemText disableTypography primary={title} />
@@ -155,6 +156,9 @@ export const NavItemSub: React.FC<NavItemSubProps> = ({
       </Typography>
     </>
   );
+=======
+  )
+>>>>>>> Stashed changes
 
   if (children) {
     return (

@@ -46,12 +46,18 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       sx={{
         display: { lg: 'flex' },
         minHeight: { lg: 1 },
-        background: themeMode === 'light' ? '#FBFBFB' : 'inherit',
+        background: '#f9f9f9',
       }}
     >
       <DashboardHeader isCollapse={isCollapse} onOpenSidebar={() => setOpen(true)} />
       <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
+<<<<<<< Updated upstream
       <MainStyle collapseClick={collapseClick}>{children}</MainStyle>
+=======
+      <MainStyle collapseClick={collapseClick}>
+        {children} <NavBottom />
+      </MainStyle>
+>>>>>>> Stashed changes
     </Box>
   )
 }

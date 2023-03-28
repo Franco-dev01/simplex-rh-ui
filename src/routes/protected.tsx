@@ -14,6 +14,11 @@ const { DashboardRoutes } = lazyImport(
   'DashboardRoutes',
 )
 
+const { LeaveAbsenceManagementRoutes } = lazyImport(
+  () => import('../features/leave-absent-management/routes'),
+  'LeaveAbsenceManagementRoutes',
+)
+
 const App = () => {
   const { pathname } = useLocation()
 
@@ -42,6 +47,10 @@ const protectedRoutes: RouteObject[] = [
       {
         path: 'accueil/*',
         element: <DashboardRoutes />,
+      },
+      {
+        path: 'leave-absence-management/*',
+        element: <LeaveAbsenceManagementRoutes />,
       },
     ],
   },
