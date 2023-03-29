@@ -1,25 +1,24 @@
-<<<<<<< Updated upstream
-import { Box, Drawer, Stack } from '@mui/material'
-=======
+
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react/no-unescaped-entities */
+
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable react/no-unescaped-entities */
 import { Avatar, Box, Button, Divider, Drawer, IconButton, Stack, Typography } from '@mui/material'
->>>>>>> Stashed changes
+
 import { styled, useTheme } from '@mui/material/styles'
 import React from 'react'
 
-import { NavSectionVertical } from '../../../components/nav-section'
 import Scrollbar from '../../../components/Scrollbar'
 import { NAVBAR } from '../../../config/layouts'
 import useCollapseDrawer from '../../../hooks/useCollapseDrawer'
 import useResponsive from '../../../hooks/useResponsive'
+import profileImg from '../../../assets/images/profile.jpg'
 
-<<<<<<< Updated upstream
 import Logout from './Logout'
 import navConfig from './NavConfig'
-=======
 import { Badge, Email, Place, QuestionMark, Settings } from '@mui/icons-material'
->>>>>>> Stashed changes
+
 
 const RootStyle = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
@@ -62,16 +61,14 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
         }}
       >
         <Stack
-          spacing={3}
+          spacing={1}
           sx={{
-            pt: 3,
-            pl: 4,
-            fontSize: 20,
+            mt: 2,
+            alignItems: 'center',
+            justifyContent: 'center',
           }}
         >
-<<<<<<< Updated upstream
-          Simplex-rh
-=======
+
           <Avatar
             alt='Remy Sharp'
             src={profileImg}
@@ -92,14 +89,15 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
             Responsable RH
           </Typography>
           <Button sx={{ height: 35 }}>Deconnexion</Button>
->>>>>>> Stashed changes
-        </Stack>
 
-        <NavSectionVertical navConfig={navConfig} />
+        </Stack>
+        <Box sx={{ flexGrow: 0.4 }} />
+
+        <Stack>
+          <Divider />
+        </Stack>
         <Box sx={{ flexGrow: 1 }} />
-<<<<<<< Updated upstream
-        <Logout />
-=======
+
 
         <Stack
           spacing={1}
@@ -149,7 +147,7 @@ const NavbarVertical: React.FC<NavbarVerticalProps> = ({ isOpenSidebar, onCloseS
             <Typography sx={{ fontSize: '12px' }}>clickez ici pour plus de details</Typography>
           </Box>
         </Stack>
->>>>>>> Stashed changes
+
       </Scrollbar>
     </Stack>
   )

@@ -1,35 +1,35 @@
-import { Box, Link, ListItemText, Typography } from '@mui/material';
-import React from 'react';
-import { NavLink as RouterLink } from 'react-router-dom';
+import { Box, Link, ListItemText, Typography } from '@mui/material'
+import React from 'react'
+import { NavLink as RouterLink } from 'react-router-dom'
 
-import { isExternalLink } from '..';
-import Iconify from '../../Iconify';
+import { isExternalLink } from '..'
+import Iconify from '../../Iconify'
 
-import { ListItemIconStyle, ListItemStyle, ListItemTextStyle } from './style';
+import { ListItemIconStyle, ListItemStyle, ListItemTextStyle } from './style'
 
 // ----------------------------------------------------------------------
 
 type ArrowIconProps = {
-  open: boolean;
-};
+  open: boolean
+}
 
 export const ArrowIcon: React.FC<ArrowIconProps> = ({ open }) => (
   <Iconify
     icon={open ? 'eva:arrow-ios-downward-fill' : 'eva:arrow-ios-forward-fill'}
     sx={{ width: 16, height: 16, ml: 1 }}
   />
-);
+)
 
 // ----------------------------------------------------------------------
 
 type LineIconProps = {
-  active: boolean;
-};
+  active: boolean
+}
 
 export function LineIcon({ active }: LineIconProps) {
   return (
     <Box
-      component="span"
+      component='span'
       sx={{
         width: 2,
         height: 15,
@@ -45,24 +45,24 @@ export function LineIcon({ active }: LineIconProps) {
         }),
       }}
     />
-  );
+  )
 }
 
 // ----------------------------------------------------------------------
 
 type NavItemRootProps = {
-  active: boolean;
-  open?: boolean;
-  isCollapse?: boolean;
-  onOpen?: () => void;
+  active: boolean
+  open?: boolean
+  isCollapse?: boolean
+  onOpen?: () => void
   item: {
-    children: React.ReactNode[];
-    icon: any;
-    info: any;
-    path: string;
-    title: string;
-  };
-};
+    children: React.ReactNode[]
+    icon: any
+    info: any
+    path: string
+    title: string
+  }
+}
 
 export const NavItemRoot: React.FC<NavItemRootProps> = ({
   item,
@@ -71,7 +71,7 @@ export const NavItemRoot: React.FC<NavItemRootProps> = ({
   active,
   onOpen,
 }) => {
-  const { title, path, icon, info, children } = item;
+  const { title, path, icon, info, children } = item
 
   const renderContent = (
     <>
@@ -85,42 +85,42 @@ export const NavItemRoot: React.FC<NavItemRootProps> = ({
       )}
       {active && !children && <LineIcon active={active} />}
     </>
-  );
+  )
 
   if (children) {
     return (
       <ListItemStyle onClick={onOpen} activeRoot={active}>
         {renderContent}
       </ListItemStyle>
-    );
+    )
   }
 
   return isExternalLink(path) ? (
-    <ListItemStyle component={Link} href={path} target="_blank" rel="noopener">
+    <ListItemStyle component={Link} href={path} target='_blank' rel='noopener'>
       {renderContent}
     </ListItemStyle>
   ) : (
     <ListItemStyle component={RouterLink} to={path} activeRoot={active}>
       {renderContent}
     </ListItemStyle>
-  );
-};
+  )
+}
 
 // ----------------------------------------------------------------------
 
 type NavItemSubProps = {
-  active?: boolean;
-  open?: boolean;
-  onOpen?: () => void;
+  active?: boolean
+  open?: boolean
+  onOpen?: () => void
   item: {
-    children: React.ReactNode[] | any;
-    icon: any;
-    info: any;
-    path: string;
-    title: string;
-    available?: boolean;
-  };
-};
+    children: React.ReactNode[] | any
+    icon: any
+    info: any
+    path: string
+    title: string
+    available?: boolean
+  }
+}
 
 export const NavItemSub: React.FC<NavItemSubProps> = ({
   item,
@@ -128,7 +128,7 @@ export const NavItemSub: React.FC<NavItemSubProps> = ({
   active = false,
   onOpen,
 }) => {
-  const { title, path, info, children } = item;
+  const { title, path, info, children } = item
 
   const renderContent = (
     <>
@@ -137,44 +137,22 @@ export const NavItemSub: React.FC<NavItemSubProps> = ({
       {children && <ArrowIcon open={open} />}
       {active && <LineIcon active={active} />}
     </>
-<<<<<<< Updated upstream
-  ) : (
-    <>
-      <ListItemText disableTypography primary={title} />
-      {info && info}
-      {children && <ArrowIcon open={open} />}
-      <Typography
-        component="small"
-        sx={{
-          fontSize: 11,
-          backgroundColor: '#F6FAFE',
-          borderRadius: 5,
-          p: 0.3,
-        }}
-      >
-        Indispo
-      </Typography>
-    </>
-  );
-=======
-  )
->>>>>>> Stashed changes
 
   if (children) {
     return (
       <ListItemStyle onClick={onOpen} activeSub={active} subItem>
         {renderContent}
       </ListItemStyle>
-    );
+    )
   }
 
   return isExternalLink(path) ? (
-    <ListItemStyle component={Link} href={path} target="_blank" rel="noopener" subItem>
+    <ListItemStyle component={Link} href={path} target='_blank' rel='noopener' subItem>
       {renderContent}
     </ListItemStyle>
   ) : (
     <ListItemStyle component={RouterLink} to={path} activeSub={active} subItem>
       {renderContent}
     </ListItemStyle>
-  );
-};
+  )
+}

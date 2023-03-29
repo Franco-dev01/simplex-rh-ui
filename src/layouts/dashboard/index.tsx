@@ -7,6 +7,7 @@ import useSettings from '../../hooks/useSettings'
 
 import DashboardHeader from './header'
 import NavbarVertical from './navbar/NavbarVertical'
+import NavBottom from './navbar/NavBottom'
 
 const MainStyle: any = styled('main', {
   shouldForwardProp: (prop: any) => prop !== 'collapseClick',
@@ -49,15 +50,11 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
         background: '#f9f9f9',
       }}
     >
-      <DashboardHeader isCollapse={isCollapse} onOpenSidebar={() => setOpen(true)} />
       <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
-<<<<<<< Updated upstream
-      <MainStyle collapseClick={collapseClick}>{children}</MainStyle>
-=======
+
       <MainStyle collapseClick={collapseClick}>
         {children} <NavBottom />
       </MainStyle>
->>>>>>> Stashed changes
     </Box>
   )
 }
