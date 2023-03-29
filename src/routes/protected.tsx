@@ -31,11 +31,6 @@ const { LeaveAbsenceManagementRoutes } = lazyImport(
   'LeaveAbsenceManagementRoutes',
 )
 
-const { LeaveAbsenceManagementRoutes } = lazyImport(
-  () => import('../features/leave-absent-management/routes'),
-  'LeaveAbsenceManagementRoutes',
-)
-
 const App = () => {
   const { pathname } = useLocation()
 

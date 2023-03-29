@@ -29,31 +29,9 @@ export const PATH_AUTH = {
 }
 
 
-export const PATH_TASK_MANAGEMENT = {
-  task: {
-    root: path(ROOTS_TASK, '/list'),
-    creation: path(ROOTS_TASK, '/creation'),
 
-  },
-  project: {
-    root: path(ROOTS_TASK, '/project/list'),
-  },
-}
 
-export const PATH_CONFIGURATION = {
-  typeContract: {
-    root: path(ROOTS_CONFIGURATION, '/type-contract/list'),
-  },
-  typeLeave: {
-    root: path(ROOTS_CONFIGURATION, '/type-leave/list'),
-  },
-  department: {
-    root: path(ROOTS_CONFIGURATION, '/department/list'),
-  },
-  functionCompany: {
-    root: path(ROOTS_CONFIGURATION, '/function-company/list'),
-  },
-}
+
 
 export const PATH_TASK_MANAGEMENT = {
   task: {
@@ -79,6 +57,7 @@ export const PATH_CONFIGURATION = {
     root: path(ROOTS_CONFIGURATION, '/function-company/list'),
   },
 }
+
 
 export const PATH_PERSONNEL_ADMINISTRATION = {
   employee: {
