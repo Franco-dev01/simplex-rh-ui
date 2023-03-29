@@ -51,6 +51,7 @@ export const DashboardLayout = ({ children }: DashboardLayoutProps) => {
       }}
     >
       <NavbarVertical isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
+
       <MainStyle collapseClick={collapseClick}>
         {children} <NavBottom />
       </MainStyle>

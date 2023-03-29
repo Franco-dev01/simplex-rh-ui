@@ -17,6 +17,51 @@ const navConfig = [
   {
     items: [
       {
+
+        title: 'Administration du personnel',
+        icon: <AdminPanelSettings />,
+        path: PATH_PERSONNEL_ADMINISTRATION.employee.root,
+        children: [
+          {
+            title: 'Ajouter un employé',
+            path: PATH_PERSONNEL_ADMINISTRATION.employee.root,
+          },
+          {
+            title: 'Consulter fiche employé',
+            path: PATH_PERSONNEL_ADMINISTRATION.consultationEmployee.root,
+          },
+          {
+            title: 'Faire un communiqué',
+            path: PATH_PERSONNEL_ADMINISTRATION.communication.root,
+          },
+          {
+            title: 'Historique des communiqués',
+            path: PATH_PERSONNEL_ADMINISTRATION.communicationHistory.root,
+          },
+        ],
+
+      },
+      {
+        title: 'Gestion des congés et absences',
+        icon: <AdminPanelSettings />,
+        path: PATH_LEAVE_ABSENCE_MANAGEMENT.leaveRequest,
+        children: [
+          {
+            title: 'Demande de congé',
+            path: PATH_LEAVE_ABSENCE_MANAGEMENT.leaveRequest,
+          },
+          {
+            title: 'Bilan des demandes',
+            path: PATH_LEAVE_ABSENCE_MANAGEMENT.balanceRequest,
+          },
+          {
+            title: 'Gestion des demandes',
+            path: PATH_LEAVE_ABSENCE_MANAGEMENT.demandManagement,
+          },
+        ],
+      },
+      {
+
         title: 'Administration du personnel',
         icon: <AdminPanelSettings />,
         path: PATH_PERSONNEL_ADMINISTRATION.employee.root,
@@ -72,6 +117,7 @@ const navConfig = [
             path: PATH_TASK_MANAGEMENT.project.root,
           },
         ],
+
       },
       {
         title: 'Configuration',

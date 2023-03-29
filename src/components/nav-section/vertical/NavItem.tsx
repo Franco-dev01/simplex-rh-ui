@@ -137,7 +137,6 @@ export const NavItemSub: React.FC<NavItemSubProps> = ({
       {children && <ArrowIcon open={open} />}
       {active && <LineIcon active={active} />}
     </>
-  )
 
   if (children) {
     return (
